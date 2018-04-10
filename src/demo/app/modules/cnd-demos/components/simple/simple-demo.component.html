@@ -1,0 +1,50 @@
+<header class="demo-header">
+  <h1 class="title">Demo: Simple Lists</h1>
+  <div class="alert alert-success">
+    <strong>Instructions:</strong> Drag &amp; drop the list items to move them around, or just click to select them. If that's
+    too boring, check out the <a href="#/advanced-demo">advanced demo</a>
+  </div>
+</header>
+<div class="container">
+  <div class="simpleDemo row">
+    <div class="col-md-8">
+      <div class="row">
+        <div *ngFor="let list of lists" class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">List {{list.name}}</h5>
+              <!-- The dndList directive allows to drop elements into it.
+                  The dropped data will be added to the referenced list -->
+              <ul [(dndList)]="list.value">
+                <!-- The dndDraggable directive makes an element draggable and will
+                  transfer the object that was assigned to it. If an element was
+                  dragged away, you have to remove it from the original list
+                  yourself using the dndMoved output -->
+                <li *ngFor="let item of list.value; let i = index;"
+                  [dndDraggable]="item"
+                  (dndMoved)="moved(i, list.value)"
+                  dndEffectAllowed="move"
+                  (dndSelected)="models.selected = item" [ngClass]="{'selected': models.selected === item}">
+                  {{item.label}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div view-source="simple"></div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Generated Model</h5>
+          <div class="card-text">
+            <pre class="current-model" [innerHTML]="models | prettyprint"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

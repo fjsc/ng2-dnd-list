@@ -1,0 +1,16 @@
+.bg-faded {
+  background-color: #f7f7f7;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  left: 0;
+}
+
+ul {
+  margin-left: 30px;
+}
+
+.content {
+  padding-top: 55px;
+}

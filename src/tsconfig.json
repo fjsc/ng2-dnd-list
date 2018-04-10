@@ -16,7 +16,7 @@
       "dom"
     ],
     "paths": {
-      "@fjsc/ng-dnd-list": ["./../src/lib/public_api.ts"]
+      "@fjsc/ng-dnd-list": ["./../lib/public_api.ts"]
    }
   }
 }

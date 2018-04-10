@@ -1,0 +1,29 @@
+{
+   "name": "@fjsc/ng-dnd-list",
+   "version": "1.0.2",
+   "description": "Angular (v4+) directives for sorting nested lists using the HTML5 Drag and Drop API",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/fjsc/ng-dnd-list"
+   },
+   "keywords": [
+      "angular",
+      "drag and drop",
+      "library",
+      "directives"
+   ],
+   "author": "fran <fjsc.noah@gmail.com>",
+   "license": "MIT",
+   "peerDependencies": {
+      "@angular/core": ">=4.0.0",
+      "@angular/common": ">=4.0.0"
+   },
+   "main": "bundles/fjsc-ng-dnd-list.umd.js",
+   "module": "esm5/fjsc-ng-dnd-list.js",
+   "es2015": "esm2015/fjsc-ng-dnd-list.js",
+   "typings": "fjsc-ng-dnd-list.d.ts",
+   "metadata": "fjsc-ng-dnd-list.metadata.json",
+   "dependencies": {
+      "tslib": "^1.7.1"
+   }
+}
