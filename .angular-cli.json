@@ -1,11 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular-dnd-list"
+    "name": "ng2-dnd-list"
   },
   "apps": [
     {
-      "root": "src",
+      "root": "src/demo",
       "outDir": "dist",
       "assets": [
         "assets",
@@ -19,6 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../../node_modules/font-awesome/css/font-awesome.css",
         "styles.css"
       ],
       "scripts": [],
@@ -36,11 +38,11 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json",
+      "project": "src/demo/tsconfig.app.json",
       "exclude": "**/node_modules/**"
     },
     {
-      "project": "src/tsconfig.spec.json",
+      "project": "src/demo/tsconfig.spec.json",
       "exclude": "**/node_modules/**"
     },
     {

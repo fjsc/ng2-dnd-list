@@ -1,0 +1,43 @@
+.bg-faded {
+  background-color: #f7f7f7;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  left: 0;
+}
+
+ul {
+  margin-left: 30px;
+}
+
+.content {
+  padding-top: 55px;
+}
+
+.github-link {
+   height: 26px;
+   line-height: 26px;
+   padding: 0 10px;
+   font-size: 12px;
+   background-color: #eff3f6;
+   background-image: linear-gradient(to bottom, #fafbfc, #e4ebf0);
+   background-repeat: repeat-x;
+   background-size: 110% 110%;
+   display: inline-block;
+   font-weight: 600;
+   vertical-align: middle;
+   cursor: pointer;
+   border: 1px solid #d1d2d3;
+   margin-left: 20px;
+   border-radius: 0.25em;
+
+   .icon {
+      font-size: 17px;
+      margin-right: 4px;
+      line-height: 26px;
+      display: inline-block;
+      float: left;
+      height: 30px;
+   }
+}

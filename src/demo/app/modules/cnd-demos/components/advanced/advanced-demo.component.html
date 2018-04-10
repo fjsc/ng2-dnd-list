@@ -1,0 +1,83 @@
+<header class="demo-header">
+  <h1 class="title">Demo: Advaced features</h1>
+
+  <div class="alert alert-success">
+    <strong>Instructions:</strong> Drag &amp; drop the list items to move them around, or just click to select them.
+  </div>
+</header>
+<div class="container">
+  <ul>
+    <li><strong>dndEffectAllowed:</strong> This demo shows how to use dndEffectAllowed to control which drop effects are
+      allowed. If the source and target elements have no drop effect that is allowed on both, then a drop is not possible.
+      If there are multiple possible drop effects, then the user can control the drop effect using modifier keys (Ctrl and
+      Alt).</li>
+    <li><strong>dndExternalSources:</strong> Allows to drag and drop elements accross browser windows, which you can test in
+      this example. The downside to this is that the lists will accept arbitrary text to be dropped. To prevent that, the
+      dndDrop event verifies that the dropped element is of the desired format.</li>
+    <li><strong>dndAllowedTypes in nested lists:</strong> We are using the dnd-allowed-types attribute to ensure that Containers
+      only accept items, but not other containers.</li>
+    <li><strong>dndHorizontalList:</strong> This attribute tells the positioning algorithm to drop incoming elements left or
+      right of the existing elements, instead of above or below.</li>
+    <li><strong>Events:</strong> The directives offer various output events, which in this example will log the events to the
+      console. Additionally, the events handler on the dndList can prevent an element from being dropped. In this example <strong>you can't drop elements
+        after the 10th position</strong>, because we are preventing that in the dndDragover event.</li>
+  </ul>
+  <div class="advancedDemo row">
+    <div *ngFor="let containers of model; let i = index;" class="col-md-6">
+      <div class="dropzone card">
+        <div class="card-body">
+          <h4 class="card-title">Dropzone {{i + 1}}</h4>
+          <ul [(dndList)]="model[i]"
+            [dndAllowedTypes]="['container']"
+            [dndExternalSources]="true"
+            (dndDragover)="onDragover($event)"
+            (dndDrop)="onDrop($event)">
+            <li *ngFor="let container of containers; let i = index;"
+              [dndDraggable]="container"
+              dndType="container"
+              dndEffectAllowed="copyMove"
+              (dndMoved)="containers.splice(i, 1)"
+              [dndCallback]="callback">
+              <div class="container-element box box-blue">
+                <h5>Container (effects allowed: {{container.effectAllowed}})</h5>
+                <ul [(dndList)]="container.items"
+                    [dndAllowedTypes]="['item']"
+                    [dndHorizontalList]="true"
+                    [dndExternalSources]="true"
+                    [dndEffectAllowed]="container.effectAllowed"
+                    (dndDragover)="onDragover($event, container.items)"
+                    (dndDrop)="onDrop($event)"
+                    (dndInserted)="onInserted($event, container.items)"
+                    class="itemlist">
+                  <li *ngFor="let item of container.items; let i = index;"
+                    [dndDraggable]="item"
+                    dndType="item"
+                    [dndEffectAllowed]="item.effectAllowed"
+                    (dndDragstart)="logEvent('Started to drag an item')"
+                    (dndMoved)="container.items.splice(i, 1)"
+                    (dndDragend)="logEvent('Drag operation ended. Drop effect: ' + $event.dropEffect)">
+                    {{item.label}}
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Generated Model</h5>
+            <div class="card-text">
+              <pre class="current-model" [innerHTML]="model | prettyprint"></pre>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

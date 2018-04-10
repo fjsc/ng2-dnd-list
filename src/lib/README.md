@@ -22,7 +22,7 @@ Internet Explorer 8 or lower is *not supported*, but all modern browsers are (se
 You can install ng2-dnd-list package from npm:
 
 ```
-npm i @fjsc/ng2-dnd-list
+npm i ng2-dnd-list
 ```
 
 ### Work with the code

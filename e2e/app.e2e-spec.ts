@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-dnd-list App', () => {
+describe('ng2-dnd-list App', () => {
   let page: AppPage;
 
   beforeEach(() => {
