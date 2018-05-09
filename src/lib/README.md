@@ -25,27 +25,6 @@ You can install ng2-dnd-list package from npm:
 npm i ng2-dnd-list
 ```
 
-### Work with the code
-
-You can use Npm or Yarn to work with ng2-dnd-list. If you want to use Yarn, it has to be installed first as a global dependency in your local machine.
-
-```
-sudo npm i -g yarn
-```
-
-Once Yarn is installed or Npm is ready, you can install ng2-dnd-list using:
-
-```
-yarn
-```
-
-or
-
-```
-npm install
-```
-
-
 ## dndDraggable directive
 Use the dndDraggable directive to make your element draggable
 
