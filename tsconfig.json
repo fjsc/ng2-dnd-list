@@ -16,7 +16,11 @@
       "dom"
     ],
     "paths": {
-      "@fjsc/ng2-dnd-list": ["./../src/lib/public_api.ts"]
-   }
+      "@fjsc/ng2-dnd-list": [
+        "./../src/lib/public_api.ts"
+      ]
+    },
+    "module": "es2015",
+    "baseUrl": "./"
   }
 }
